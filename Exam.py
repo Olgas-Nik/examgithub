@@ -23,3 +23,33 @@ def check_pal(string):
 
 print(check_pal(word))
 
+
+# Задание 3
+class Tomato:
+
+    states = {0: 'sead', 1: 'flower', 2: 'green tomato', 3: 'red tomato'}
+
+    def init(self, index, state):
+        self.index = index
+        self.state = state
+
+    def grow(self):
+        self._change_states()
+
+
+    def is_ripe(self):
+        if self.state == 3:
+            return True
+        return False
+
+
+class TomatoBush:
+
+    def _init_(self, num):
+        self.tomatoes = [Tomato(index) for index in range(0, num)]
+
+    def grow_all(self):
+        for tomato in self.tomatoes:
+            tomato.grow()
+
+
